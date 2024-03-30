@@ -1,0 +1,29 @@
+Options -Indexes
+
+RewriteEngine On
+RewriteRule "^app/register$" "/core/pages/warning.php"
+RewriteRule "^app/register/form$" "/core/pages/signup.php"
+RewriteRule "^app/register/submit$" "/core/function/register.php"
+RewriteRule "^app/login$" "/core/pages/login.php"
+RewriteRule "^app/login/submit$" "/core/function/login.php"
+RewriteRule "^app/home$" "/core/pages/home.php"
+RewriteRule "^app/games$" "/core/pages/games.php"
+RewriteRule "^app/logout$" "/core/function/authentication/signout.php"
+RewriteRule "^app/discord/verify$" "/core/pages/discord/verify.php"
+RewriteRule "^app/create$" "/core/pages/create.php"
+RewriteRule "^app/create/game$" "/core/pages/makegame.php"
+RewriteRule "^app/create/game/do$" "/core/function/creategame.php"
+RewriteRule "^app/games/view$" "/core/pages/game.php"
+RewriteRule "^app/admin$" "/core/pages/admin/main.php"
+RewriteRule "^app/admin/banning$" "/core/pages/admin/ban.php"
+RewriteRule "^app/admin/doban$" "/core/function/doban.php"
+RewriteRule "^app/users$" "/core/pages/users.php"
+RewriteRule "^app/admin/unbanning$" "/core/pages/admin/unban.php"
+RewriteRule "^app/admin/dounban$" "/core/function/dounban.php"
+
+
+RewriteEngine On
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:CF-Visitor} !{"scheme":"https"}
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

